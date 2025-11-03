@@ -45,9 +45,10 @@ app.get("/test-db", async (req, res) => {
 
 app.get("/test-webhook", (req, res) => {
   // 3 minutes = 3 × 60 × 1000 = 180000 milliseconds
+  // 55 sec = 55*1000 = 55000 milliseconds
   setTimeout(() => {
     res.status(200).send({ message: "Webhook received after 3 minutes!" });
-  }, 180000);
+  }, 55000);
 });
 
 const PORT = process.env.PORT || 4000;
